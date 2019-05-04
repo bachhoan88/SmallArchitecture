@@ -48,7 +48,7 @@ abstract class BaseFragment<T : ViewDataBinding, V : BaseViewModel> : Fragment()
         viewDataBinding.apply {
             setVariable(bindingVariable, viewModel)
             executePendingBindings()
-            setLifecycleOwner(this@BaseFragment)
+            lifecycleOwner = this@BaseFragment
         }
     }
 
@@ -72,12 +72,12 @@ abstract class BaseFragment<T : ViewDataBinding, V : BaseViewModel> : Fragment()
             }
             return true
         }
+
+        return false
     }
 
     internal fun requestPermission(rationale: String, @Size(min = 1) vararg permissions: String) {
-        for (perm in permissions) {
-            EasyPermissions.requestPermissions(this, rationale, PERMISSION_REQUEST_CODE, perm)
-        }
+        Permission.requestPermissions(this, rationale, PERMISSION_REQUEST_CODE, permissions)
     }
 
     // if don't know exactly view can get from current force [main_activity?.currentFocus?.windowToken]
@@ -94,5 +94,5 @@ abstract class BaseFragment<T : ViewDataBinding, V : BaseViewModel> : Fragment()
     open fun permissionAccepted() {
     }
 
-    open fun onBackPressed() { }
+    open fun onBackPressed() {}
 }
