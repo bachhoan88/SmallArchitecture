@@ -1,8 +1,8 @@
 object Versions {
-    val kotlin = "1.3.31"
+    val kotlin = "1.3.20"
     val androidPlugin = "3.4.0"
 
-    val androidxCore = "2.0.0-rc01"
+    val androidxCore = "1.0.0"
     val archCore = "2.0.0-beta01"
     val room = "2.1.0-alpha06"
     val lifecycle = "2.0.0-beta01"
@@ -10,7 +10,7 @@ object Versions {
 
     val glide = "4.8.0"
 
-    val koin = "1.3.20"
+    val koin = "1.0.2"
 
     val junit = "4.12"
     val espresso = "3.1.1"
@@ -32,8 +32,8 @@ object Versions {
 
     val timber = "4.5.1"
 
-    val easyPermission = "3.0.1"
-    val navigation = "2.1.0-alpha01"
+    val easyPermission = "3.0.0"
+    val navigation = "1.0.0-alpha06"
     val dexmaker = "2.2.0"
 
     /**
